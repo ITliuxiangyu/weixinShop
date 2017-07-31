@@ -1,0 +1,39 @@
+<ion-modal-view id="address_model" style="width: 100%;left: 0;min-height: 0;top:auto;bottom: 0;border-bottom: .1rem solid #B9B9B9;height: 440px">
+  <div class="header_list" style="width: 100%;height: 3rem;font-size: 20px;line-height: 2;">
+    <p style="text-align: center;">
+      {{addressOptionObj.title}}
+      <i class="icon ion-close-round" ng-click="addressObj.cancelAdd()" style="position: absolute;right: 7px;top: -7px;color: red"></i>
+    </p>
+  </div>
+
+  <!--收货人-->
+  <div class="list_item" style="border-bottom: .1rem solid #B9B9B9; width: 355px;margin-top: 5px;margin-left: 10px">
+    <label class="address_list_msg" for="address_name">收货人</label>
+    <input type="text" placeholder="请输入姓名" ng-model="addressOptionObj.vname" id="address_name">
+  </div>
+  <!--联系电话-->
+  <div class="list_item" style="border-bottom: .1rem solid #B9B9B9; width: 355px;margin-top: 5px;margin-left: 10px">
+    <label class="address_list_msg" for="address_phone">联系电话</label>
+    <input type="text" placeholder="联系电话" ng-model="addressOptionObj.tel" id="address_phone">
+  </div>
+  <!--选择收获地址 省、市-->
+  <div class="list_item" style="border-bottom: .1rem solid #B9B9B9; width: 355px;height: 55px;margin-top: 5px;margin-left: 10px">
+    <label class="address_list_msg" style="height: 25px;display: inline-block;margin-top:-11px;">选择地址</label>
+    <label class="item item-input province_list_wrapper" ng-click="addressObj.selectAddressModalShow('省份')">{{addressObj.selectProvince ? addressObj.selectedProvince:"请选择省份"}}</label>
+    <label class="item item-input province_list_wrapper" ng-click="addressObj.selectAddressModalShow('城市')">{{addressObj.selectedCity ? addressObj.selectedCity :"请选择城市"}}</label>
+  </div>
+  <!--详细地址-->
+  <div class="list_item" style="border-bottom: .1rem solid #B9B9B9; width:355px;margin-top: 5px;margin-left: 10px">
+    <label class="address_list_msg" for="address_adr">详细地址</label>
+    <input type="text" placeholder="街道门牌，无需重复地区信息" ng-model="addressOptionObj.address" id="address_adr" style="width: 100%">
+  </div>
+  <!--邮政编码-->
+  <div class="list_item" style="border-bottom: .1rem solid #B9B9B9; width: 355px;margin-top: 5px;margin-left: 10px">
+    <label class="address_list_msg" for="address_code">邮政编码</label>
+    <input type="text" placeholder="邮政编码（选填）" ng-model="addressOptionObj.code" id="address_code">
+  </div>
+
+  <div class="last_list" ng-click="addressObj.saveAddress(addressOptionObj)" style="width: 100%;height: 55px;background-color: cornflowerblue;color: white;font-size: 23px;text-align: center;position: absolute;bottom: 0;padding-top: 15px;box-shadow: 0 -.1rem 2rem 0 gray;">
+    <div>保&nbsp;存</div>
+  </div>
+</ion-modal-view>

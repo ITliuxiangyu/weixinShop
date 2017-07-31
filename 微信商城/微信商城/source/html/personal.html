@@ -1,0 +1,70 @@
+<ion-view view-title="个人中心">
+  <div class="bar bar-header bar-dark">
+    <h1 class="title">个人中心</h1>
+  </div>
+  <ion-content class="person_content">
+    <!--用户名、头像-->
+    <div class="person_Info">
+      <div class="person_imgBox"><img ng-src="{{personal.headimgurl}}" alt=""></div>
+      <div class="person_name">
+        <p>{{personal.name}}</p>
+        <span>{{personal.creditNum}}</span>
+      </div>
+    </div>
+
+    <!--<div class="person_orderCollect">-->
+      <!--<div class="personal_order" ng-click="personal.showOrder()">-->
+        <!--<img src="img/order.png" alt="">-->
+        <!--<span>我的订单</span>-->
+      <!--</div>-->
+      <!--<div></div>-->
+      <!--<div class="personal_collect">-->
+        <!--<img src="img/star.png">-->
+        <!--<span>我的收藏</span>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="list">
+      <div class="item item-icon-left " ng-click="personal.showOrder()">
+        <i class="ion ion-android-list"></i>
+        我的订单
+        <!--<i class="ion ion-ios-arrow-right"></i>-->
+      </div>
+      <div class="item item-icon-left " ng-click="personal.showCollect()">
+        <i class="ion ion-ios-star"></i>
+        我的收藏
+        <!--<i class="ion ion-ios-arrow-right"></i>-->
+      </div>
+      <div class="item item-icon-left item-icon-right" ng-click="personal.showShoppingCar()">
+        <i class="ion ion-ios-cart"></i>
+        我的购物车
+        <!--<i class="ion ion-ios-arrow-right"></i>-->
+      </div>
+
+      <div class="item item-icon-left" ng-click="personal.showCredit()">
+        <i class="ion-social-tux"></i>
+        我的积分
+      </div>
+
+      <div class="item item-icon-left" ng-click="personal.showAddress()">
+        <i class="ion-ios-location"></i>
+        收货地址
+      </div>
+
+      <div class="item item-icon-left" ng-click="personal.showPay()">
+        <i class="ion-ios-paw"></i>
+        支付记录
+      </div>
+    </div>
+
+
+    <!--<ion-list>-->
+      <!--<ion-item class="item-icon-left item-icon-right" ng-repeat="item in list" type="item-text-wrap" href="#/tabs/personal/{{list.id}}">-->
+        <!--<p>{{item.test}}</p>-->
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+      <!--</ion-item>-->
+    <!--</ion-list>-->
+  </ion-content>
+</ion-view>
+

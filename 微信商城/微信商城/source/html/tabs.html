@@ -1,0 +1,63 @@
+
+
+<!--设置side-menus-->
+<ion-side-menus delegate-handle="mainSideMenu">
+  <!--禁止拖动打开-->
+  <ion-side-menu-content drag-content="false">
+    <!--nav-->
+    <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button>
+
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <div id="self_kf_btn" ng-click="open_kf()" style="display: none;position: absolute;right: 2rem;bottom: 88px;z-index: 9999;width: 6rem;height: 6rem;border-radius: 50%;background: url('../img/service1.png') no-repeat center/100%"></div>
+
+    <!--设置tabs承载页面-->
+    <ion-tabs class="tabs-icon-top cft-tabs" ng-class="{'tabs-item-hide':$root.hideTabs}">
+      <!--首页-->
+      <ion-tab title="首页" href="#/tabs/mallHome" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" class="tabs-icon-top" on-select="selectHome()">
+        <ion-nav-view name="tabs-mallHome"></ion-nav-view>
+      </ion-tab>
+
+      <!--积分商城-->
+      <ion-tab title="积分商城" href="#/tabs/integralStore" icon-on="ion-social-github" icon-off="ion-social-github-outline">
+        <ion-nav-view name="tabs-integralStore" animation="slide-left-right"></ion-nav-view>
+      </ion-tab>
+
+      <!--个人中心-->
+      <ion-tab title="个人中心" href="#/tabs/personal" icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+        <ion-nav-view name="tabs-personal"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-side-menu-content>
+
+
+  <!--侧边栏菜单-->
+  <ion-side-menu class="side_menu_wrapper" side="right" width="236">
+    <ion-view>
+      <ion-content>
+        <div class="list">
+          <a class="item" href="#">
+            <i class="ion"></i>
+            分类
+          </a>
+          <div class="item" ng-click="goGraduateTest()">
+            <i class="ion"></i>
+            考研图书
+          </div>
+          <div class="item" ng-click="goGreet()">
+            <i class="ion"></i>
+            畅销书
+          </div>
+          <div class="item" ng-click="goTextBook()">
+            <i class="ion"></i>
+            大学教材
+          </div>
+        </div>
+      </ion-content>
+    </ion-view>
+  </ion-side-menu>
+</ion-side-menus>
+
+

@@ -1,0 +1,31 @@
+<ion-view view-title="积分商城">
+
+    <ion-content>
+    <div id="books_list_wrapper">
+        <!--推荐-->
+        <div class="home_recommend" style="background: url(../../img/goodsConvert.png) no-repeat center;background-size: contain;height: 1rem;margin:.3rem 0;width: 100%;"></div>
+        <div class="row row-wrap">
+            <div class="col col-50 books_cell" ng-repeat="item in integralObj.booksData track by $index" ng-click="integralObj.goDetail(item)">
+                <div class="cell_wrapper">
+                    <!--商品图片-->
+                    <div class="books_cell_icon" style="width:100px;height:100px; background: url({{item.img_url}}) no-repeat center;background-size: contain"></div>
+                    <div class="books_cell_bottom">
+                        <div class="bottom_des">
+                            <p class="des_little">{{item.product_name}}</p>
+                            <p class="home_books_price">
+                                <span class="stamp">积分</span>{{item.sale_price}}
+                                <span class="des_prePrice"><span class="stamp">￥</span>{{item.original_price}}</span>
+
+                            </p>
+                            <!--<button class="shopping_btn_has" ng-click="homrObj.takeShopping()"></button>-->
+                        </div>
+                        <!--购买按钮-->
+
+                        <!--<button ng-if="item.books_number = 0" ng-click="homeObj.sellOut($event)" class="shopping_btn_none"></button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+<ion-view  hide-nav-bar="true">
+  <!--头部输入框-->
+  <ion-header-bar class="item-input-inset">
+    <img ng-src="../../img/logo.jpeg" alt="logo" style="height: 35px;margin-top: 5px;">
+    <div class="search-view">
+      <label class="item-input-wrapper">
+        <input type="search" placeholder="Search" style="position: absolute;top: 10px;left: 80px;">
+      </label>
+      <button class="search-btn" style="height: 1.6rem;margin-right: -110px" ng-click="goSearch(searchValue)"></button>
+
+        <button class="button button-energized" ng-click="sideAction()" style="position: absolute;right: 15px;top: 5px;"><i class="icon ion-navicon-round"></i></button>
+
+    </div>
+  </ion-header-bar>
+
+  <!--内容部分-->
+  <ion-content class="mallHome_content">
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <!--轮播图-->
+    <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
+      <ion-slide>
+        <div class="box banner">
+          <img ng-src="../../img/图1.jpg"style="width: 100%;height: 180px">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box banner">
+          <img src="../../img/tu4.jpg" style="width: 100%;height: 180px">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box banner">
+          <img src="../../img/tu3.jpg" style="width: 100%;height: 180px">
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+      <div id="books_list_wrapper">
+      <!--推荐-->
+      <div class="home_recommend"></div>
+        <div class="row row-wrap">
+          <div class="col col-50 books_cell" ng-repeat="item in homeObj.booksData track by $index" ng-click="homeObj.goDetail($index)">
+            <div class="cell_wrapper">
+              <!--商品图片-->
+              <div class="books_cell_icon" style="width:100px;height:100px; background: url({{item.img_url}}) no-repeat center;background-size: contain"></div>
+                <div class="books_cell_bottom">
+                  <div class="bottom_des">
+                    <p class="des_little">{{item.product_name}}</p>
+                    <p class="home_books_price">
+                      <span class="stamp">￥</span>{{item.sale_price}}
+                      <span class="des_prePrice"><span class="stamp">￥</span>{{item.original_price}}</span>
+
+                    </p>
+                    <!--<button class="shopping_btn_has" ng-click="homrObj.takeShopping()"></button>-->
+                  </div>
+                  <!--购买按钮-->
+
+                  <!--<button ng-if="item.books_number = 0" ng-click="homeObj.sellOut($event)" class="shopping_btn_none"></button>-->
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--当用户到达页脚或页脚附近时，调用函数，结束滚动-->
+      <!--<ion-infinite-scroll ng-if="!homeObj.moredata" on-infinite="homeObj.loadMore()" distance="1%">-->
+        <!--<p class="test" ng-if="homeObj.noneOfMoreData">没有更多商品了...</p>-->
+      <!--</ion-infinite-scroll>-->
+  </ion-content>
+
+
+
+
+</ion-view>

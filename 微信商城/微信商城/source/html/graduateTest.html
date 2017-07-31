@@ -1,0 +1,30 @@
+<ion-view title="考研图书">
+<ion-content>
+    <div id="books_list_wrapper">
+        <!--推荐-->
+        <div class="home_recommend"></div>
+            <div class="row row-wrap">
+                <div class="col col-50 books_cell" ng-repeat="item in graduateObj.booksData track by $index" ng-click="homeObj.goDetail(item)">
+                    <div class="cell_wrapper">
+                        <!--商品图片-->
+                        <div class="books_cell_icon" style="width:100px;height:100px; background: url({{item.image_url}}) no-repeat center;background-size: contain"></div>
+                        <div class="books_cell_bottom">
+                            <div class="bottom_des">
+                                <p class="des_little">{{item.name}}</p>
+                                <p class="home_books_price">
+                                    <span class="stamp">￥</span>{{item.dd_sale_price}}
+                                    <span class="des_prePrice"><span class="stamp">￥</span>{{item.original_price}}</span>
+
+                                </p>
+                                <!--<button class="shopping_btn_has" ng-click="homrObj.takeShopping()"></button>-->
+                            </div>
+                            <!--购买按钮-->
+
+                            <!--<button ng-if="item.books_number = 0" ng-click="homeObj.sellOut($event)" class="shopping_btn_none"></button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</ion-content>
+</ion-view>
